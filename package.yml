@@ -1,0 +1,19 @@
+name       : python-poyo
+version    : 0.5.0
+release    : 1
+source     :
+    - https://github.com/hackebrot/poyo/archive/refs/tags/0.5.0.tar.gz : cf75b237ff3efdde8a573512d7356c428033c77a6ccee50a89496b2654cf9420
+homepage   : https://github.com/hackebrot/poyo
+license    : MIT
+component  : programming.python
+summary    : A lightweight YAML Parser for Python
+description: |
+    A lightweight YAML Parser for Python. poyo does not allow deserialization of arbitrary Python objects. Supported types are str, bool, int, float, NoneType as well as dict and list values.
+builddeps   :
+    - python-pytest
+build      : |
+    %python3_setup
+install    : |
+    %python3_install
+check      : |
+    %python3_test pytest3 -v
